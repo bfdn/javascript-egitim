@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // array destructuring
+        // let name = ["sadık", "turan"];
+        let user = ["sadık", "turan", "kocaeli", "izmit", "41000"];
+
+        // let firstName = name[0];
+        // let lastName = name[1];
+
+        // let [firstName, lastName] = name; // dizi olduğu için değeleri karşı tarafa atar.
+        // let [firstName, lastName] = "Sadık Turan".split(" ");
+        // let [firstName, lastName, city, town] = user;
+        // let [firstName, lastName, , town] = user; // ilk 2 değer gönderili 3. boş bırakılır ve 4. tekrar aktarılır.
+        let [firstName, lastName, ...address] = user; // ilk 2 parametre değeri alır, kalanlar adres içerisine aktarılır.
+
+
+        // console.log(firstName, lastName, city, town);
+        console.log(firstName, lastName, address);
+
+
+        // object destructuring
+        // let urun = {
+        //     marka: "Apple",
+        //     model: "IPhone 13",
+        //     fiyat: 20000,
+        //     //satisDurumu: true
+        // }
+
+        // let urun = {
+        //     marka: "Apple",
+        //     model: "IPhone 12",
+        //     //fiyat: 20000,
+        //     //satisDurumu: true
+        // }
+
+        // let { marka, model, fiyat, satisDurumu } = urun;
+        // let { marka, model, fiyat, satisDurumu = false } = urun; // varsayılan değer atama
+        // let { marka, model, fiyat = 0, satisDurumu = false } = urun; // varsayılan değer atama
+
+        // console.log(marka, model, fiyat, satisDurumu);
+
+        // function urunGoster(marka, model, fiyat = 0, satisDurumu = false) {
+        //     console.log(marka, model, fiyat, satisDurumu);
+        // }
+        // urunGoster("Apple", "iphone 12");
+        // urunGoster("Apple", "iphone 12", true); // true satisDurumuna atamak istedik ama fiyat bilgisine denk geliyor.
+
+        let urun = {
+            marka: "Apple",
+            model: "IPhone 12",
+            fiyat: 10000,
+            //satisDurumu: true
+        }
+
+        function urunGoster(obj) {
+            let { marka, model, fiyat = 0, satisDurumu = false } = obj;
+            console.log(marka, model, fiyat, satisDurumu);
+        }
+        urunGoster(urun);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const sayilar = [1, 5, 7, 3, 2, 67];
+        const urunler = [
+            { urunAdi: "iphone 11", fiyat: 12000 },
+            { urunAdi: "iphone 12", fiyat: 14000 },
+            { urunAdi: "iphone 13", fiyat: 16000 },
+            { urunAdi: "iphone 13 pro", fiyat: 18000 },
+        ];
+
+        // const tekSayilar = [];
+        // for (let sayi of sayilar) {
+        //     if (sayi % 2 == 1) {
+        //         // console.log(sayi);
+        //         tekSayilar.push(sayi);
+        //     }
+        // }
+
+        // const tekSayiKontrol = (sayi) => sayi % 2 == 1;
+        // const tekSayilar = sayilar.filter(tekSayiKontrol);
+
+        const tekSayilar = sayilar.filter((sayi) => sayi % 2 == 1);
+        //const tekSayilar = sayilar.map((sayi) => sayi % 2 == 1);
+
+        // const sonuc = urunler.map(urun => urun);
+        // const sonuc = urunler.map(urun => urun.urunAdi);
+        // const sonuc = urunler.filter(urun => urun.fiyat > 15000);
+        // const filtrelenenUrunler = urunler.filter(urun => urun.fiyat > 15000).map(urun => urun.urunAdi);
+        // sonuc = filtrelenenUrunler.map(urun => urun.urunAdi);
+        // const sonuc = urunler.filter(urun => urun.fiyat > 15000).map(urun => urun.urunAdi);
+        // const sonuc = urunler.find(urun => urun.fiyat > 12000); // Tek bir değer döndürür, ilk bulduğu değeri döndürür
+        const sonuc = urunler.findIndex(urun => urun.fiyat > 12000); // ilk bulduğu elemanın indeksini döndürür
+
+        console.log(sayilar);
+        console.log(tekSayilar);
+        console.log(sonuc);
+
+
+    </script>
+
+</body>
+
+</html>

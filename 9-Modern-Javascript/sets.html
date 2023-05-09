@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        // const sayilar = new Set();
+        // const sayilar = new Set([1, 2, 3]);
+        const sayilar = new Set();
+
+        sayilar.add(1)
+        sayilar.add(2)
+        sayilar.add(3);
+        sayilar.add("4");
+
+        // const dizi = [...sayilar];
+        // console.log(dizi);
+
+        sayilar.delete(1);
+        // console.log(sayilar.has(2));
+        // sayilar.clear();
+
+        // console.log(sayilar.values());
+
+        for (let x of sayilar.values()) {
+            console.log(x);
+        }
+
+        for (let x of sayilar) {
+            console.log(x);
+        }
+
+        // sayilar.forEach(sayi => {
+        //     console.log(sayi);
+        // });
+
+        console.log(sayilar);
+
+    </script>
+
+</body>
+
+</html>

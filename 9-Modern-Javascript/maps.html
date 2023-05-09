@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        const ogrenciler = new Map();
+
+        let user = { username: "sadikturan" };
+
+
+        ogrenciler.set(1, "ali yılmaz"); // yeni değer ekleme. Key-Value değer verme
+        ogrenciler.set("546467743333", "efe can");
+        ogrenciler.set(true, "ali can");
+        ogrenciler.set(user, "sadık turan");
+
+        // console.log(ogrenciler);
+        // console.log(ogrenciler.get(1));
+        // console.log(ogrenciler.get("546467743333"));
+        // console.log(ogrenciler.get(true));
+        console.log(ogrenciler.get(user));
+
+        let sonuc;
+
+        sonuc = ogrenciler.size;
+        sonuc = ogrenciler.has(1);
+        // sonuc = ogrenciler.has(2);
+
+        // ogrenciler.delete(1);
+        // sonuc = ogrenciler.size;
+        // sonuc = ogrenciler.has(1);
+        // ogrenciler.clear();
+        // console.log(ogrenciler);
+
+        // console.log(sonuc);
+
+        for (let x of ogrenciler.keys()) {
+            // console.log(x);
+        }
+
+        for (let x of ogrenciler.values()) {
+            // console.log(x);
+        }
+
+        for (let x of ogrenciler.entries()) {
+            // console.log(x);
+            console.log(x[0], x[1]);
+            // console.log(...x);
+        }
+
+        for (let [key, value] of ogrenciler.entries()) {
+            console.log(key, value);
+        }
+
+        // forEach()
+
+        // ogrenciler.forEach((value, key) => {
+        //     console.log(value, key);
+        // });
+
+
+        /*
+        ogrenci = {
+            ogr1: {},
+            ogr2: {},
+            ogr3: {},
+            ogr4: {},
+            ogr5: {},
+        };
+
+        console.log(Object.keys(ogrenci).length);
+        console.log(ogrenci);
+        console.log(ogrenci.length);
+        */
+
+    </script>
+
+</body>
+
+</html>

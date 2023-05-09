@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+
+    <script>
+        // calback, promise, async-await
+
+        // login     => username
+        // posts
+        // create post
+
+
+        // sipariş
+        // sipariş hazırlama
+
+        /*
+        // Senkron programlama yukarıdan aşağıya doğru okur ve ilerler.
+        console.log("start");
+        const login = (username, password) => {
+            setTimeout(() => {
+                return { username: username }
+            }, 1000);
+        }
+
+
+        const user = login("sadikturan", "12345");
+        console.log(user); // Burada user bilgisi undefined gelir. Çünkü bir işlem yapılıyor ve o işlem bitmeden kodlar aşağıya doğru çalışmaya devam ediyor. Bu yüzden daha user bilgisi sonucu dönmeden ilerlemiş olacak ve undefined değeri basacak ekrana yani boş
+        console.log("end");
+        */
+
+        // callback
+        console.log("start");
+        // 3.parametre, son parametre olarak callback verilir. isim callback olmak zorunda değil istediğin ismi verebilirsin.
+        const login = (username, password, callback) => {
+            setTimeout(() => {
+                callback({ username: username, email: "info@sadikturan.com" })
+            }, 1000);
+        }
+
+        const getPostsByUsername = (username, callback) => {
+            setTimeout(() => {
+                callback(["post 1", "post 2", "post 3"]);
+            }, 2000);
+        }
+
+        const getPostDetails = (post, callback) => {
+            setTimeout(() => {
+                callback("post details");
+            }, 1000);
+        }
+
+        /// fonksiyon çağrıldığında 3.parametre olarak callback fonksiyon gönderilir.
+        login("sadikturan", "12345", user => {
+            console.log(user.username);
+            console.log(user.email);
+
+            getPostsByUsername(user.username, (posts) => {
+                console.log(posts);
+
+                getPostDetails(posts[0], (details) => {
+                    console.log(details);
+                });
+            });
+        });
+        // callback hell => çok fazla iç içe callback oluşursa
+
+        console.log("end");
+    </script>
+
+
+
+</body>
+
+</html>
